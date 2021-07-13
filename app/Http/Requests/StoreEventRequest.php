@@ -47,13 +47,4 @@ class StoreEventRequest extends FormRequest
         ];
     }
 
-    // validate theo business riêng.
-    public function withValidator($validator)
-    {
-        $validator->after(function ($validator) {
-            if($this->get('name') == 'xuanhung'){
-                $validator->errors()->add('name', 'Tao không chơi với thằng Hùng.');
-            }
-        });
-    }
 }
